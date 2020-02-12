@@ -3,12 +3,14 @@
         {
             "title": "the mass of the sun",
             "unit": "yotta-elephants",
-            "answer": 600
+            "answer": 600.0,
+            "tolerance": 10.0
         },
         {
             "title": "distance to Proxima Centauri",
             "unit": "light-years",
-            "answer": 4.221
+            "answer": 4.221,
+            "tolerance": 2.5
         }
     ]
 }
