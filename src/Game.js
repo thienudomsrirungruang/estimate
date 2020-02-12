@@ -1,6 +1,7 @@
 import React from 'react';
 import {useState} from 'react';
-import gameData from './gameData.json'
+import gameData from './gameData.json';
+import './Game.css';
 
 function Game() {
     const [question, setQuestion] = useState(gameData.questions[Math.floor(Math.random() * gameData.questions.length)]);
@@ -24,17 +25,16 @@ function Game() {
     }
 
     return(
-        <div>
-            <p>{question.title} in {question.unit}</p>
-            <input
-                type="text"
-                value={answerInput}
-                onChange={(e) => setAnswerInput(e.target.value)}
-                onKeyDown={handleInputKeyDown}
-            />
-            <button onClick={changeQuestion}>
-                Change question!
-            </button>
+        <div id="game">
+            <center>
+                <p>{question.title} in {question.unit}</p>
+                <input
+                    type="text"
+                    value={answerInput}
+                    onChange={(e) => setAnswerInput(e.target.value)}
+                    onKeyDown={handleInputKeyDown}
+                />
+            </center>
         </div>
     )
 }

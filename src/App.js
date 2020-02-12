@@ -4,7 +4,9 @@ import Game from './Game.js';
 
 function App() {
   return (
-    <Game/>
+    <div id="window">
+      <Game/>
+    </div>
   );
 }
 
