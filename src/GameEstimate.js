@@ -1,9 +1,9 @@
 import React from 'react';
 import {useState} from 'react';
 import gameData from './gameData.json';
-import './Game.css';
+import './GameEstimate.css';
 
-function Game() {
+function GameEstimate() {
     const [question, setQuestion] = useState(gameData.questions[Math.floor(Math.random() * gameData.questions.length)]);
     const [answerInput, setAnswerInput] = useState("");
 
@@ -39,4 +39,4 @@ function Game() {
     )
 }
 
-export default Game;
+export default GameEstimate;

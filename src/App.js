@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Game from './Game.js';
+import GameEstimate from './GameEstimate.js';
 
 function App() {
   return (
     <div id="window">
-      <Game/>
+      <GameEstimate/>
     </div>
   );
 }
