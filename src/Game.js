@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {useState} from 'react';
 import GameEstimate from './GameEstimate.js';
 import GameAnswer from './GameAnswer.js';
+import './Game.css';
 
 function Game() {
 
@@ -38,7 +39,9 @@ function Game() {
     }
 
     return(
-        renderWindow()
+        <div id="game-wrapper">
+            {renderWindow()}
+        </div>
     );
 }
 
