@@ -1,16 +1,19 @@
 {
-    "questions": [
+    "quantities": [
         {
-            "title": "the mass of the sun",
-            "unit": "yotta-elephants",
-            "answer": 600.0,
-            "tolerance": 10.0
+            "name": "the diameter of Earth",
+            "unit": "m",
+            "answer": 12472000
         },
         {
-            "title": "distance to Proxima Centauri",
-            "unit": "light-years",
-            "answer": 4.221,
-            "tolerance": 2.5
+            "name": "the diameter of a proton",
+            "unit": "m",
+            "answer": 8.33e-16
+        },
+        {
+            "name": "width of China",
+            "unit": "m",
+            "answer": 5250000
         }
     ]
 }

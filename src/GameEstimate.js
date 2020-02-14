@@ -4,7 +4,7 @@ import gameData from './gameData.json';
 import './GameEstimate.css';
 
 function GameEstimate(props) {
-    const [question, setQuestion] = useState(gameData.questions[Math.floor(Math.random() * gameData.questions.length)]);
+    // const [question, setQuestion] = useState(gameData.questions[Math.floor(Math.random() * gameData.questions.length)]);
     const [answerInput, setAnswerInput] = useState("");
 
     const setGameState = props.setGameState
@@ -17,6 +17,23 @@ function GameEstimate(props) {
     const setTopBarPercent = props.setTopBarPercent
 
     const [startTimestamp, setStartTimestamp] = useState(Date.now());
+
+    const [question, setQuestion] = useState({
+        "title": "",
+        "unit": "",
+        "answer": "",
+        "tolerance": 0
+    });
+
+    useEffect(() => {
+        var quantity = gameData.quantities[Math.floor(Math.random() * gameData.quantities.length)];
+        setQuestion({
+            "title": quantity.name,
+            "unit": quantity.unit,
+            "answer": quantity.answer,
+            "tolerance": 10
+        });
+    }, []);
 
     function validateAnswer(){
         var userAnswer = parseFloat(answerInput)
