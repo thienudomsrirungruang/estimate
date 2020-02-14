@@ -12,12 +12,12 @@ function GameEstimate(props) {
     const score = props.score
     const setScore = props.setScore
 
-
     const inputBox = useRef(null);
 
-    // function changeQuestion(){
-    //     setQuestion(gameData.questions[Math.floor(Math.random() * gameData.questions.length)]);
-    // }
+    const setTopBarPercent = props.setTopBarPercent
+
+    const [startTimestamp, setStartTimestamp] = useState(Date.now());
+
     function validateAnswer(){
         var userAnswer = parseFloat(answerInput)
         var lowerBound = question.answer / question.tolerance
@@ -46,7 +46,14 @@ function GameEstimate(props) {
 
     useEffect(() => {
         inputBox.current.focus();
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        setTimeout(() => {
+            var millis = 15000 - Date.now() + startTimestamp;
+            setTopBarPercent(millis / 15000);
+        }, 30);
+    });
 
     return(
         <div id="game">

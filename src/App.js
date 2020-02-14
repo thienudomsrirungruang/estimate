@@ -10,7 +10,9 @@ function App() {
             <TopBar
                 topBarPercent={topBarPercent}
             />
-            <Game/>
+            <Game
+                setTopBarPercent={setTopBarPercent}
+            />
         </div>
     );
 }

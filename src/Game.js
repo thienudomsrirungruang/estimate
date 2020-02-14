@@ -4,7 +4,7 @@ import GameEstimate from './GameEstimate.js';
 import GameAnswer from './GameAnswer.js';
 import './Game.css';
 
-function Game() {
+function Game(props) {
 
     const [gameState, setGameState] = useState(1);
 
@@ -17,6 +17,8 @@ function Game() {
 
     const [score, setScore] = useState(0);
 
+    const setTopBarPercent = props.setTopBarPercent;
+    
     function renderWindow(){
         switch(gameState){
             case 0:
@@ -26,8 +28,10 @@ function Game() {
                             setAnswerProps={setAnswerProps} 
                             score={score}
                             setScore={setScore}
+                            setTopBarPercent={setTopBarPercent}
                         />
             case 2:
+                setTopBarPercent(0);
                 return <GameAnswer
                             setGameState={setGameState}
                             answerProps={answerProps}

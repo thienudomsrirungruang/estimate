@@ -1,9 +1,11 @@
 import React from 'react';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import './GameAnswer.css';
 
 
 function GameAnswer(props) {
+
+    const [enterKeyUp, setEnterKeyUp] = useState(false);
 
     const answerProps = props.answerProps;
     const score = props.score;
@@ -11,16 +13,26 @@ function GameAnswer(props) {
 
     function downHandler({key}) {
         if (key === "Enter") {
-            setGameState(1);
+            if(enterKeyUp){
+                setGameState(1);
+            }
+        }
+    }
+
+    function upHandler({key}) {
+        if (key === "Enter") {
+            setEnterKeyUp(true);
         }
     }
 
     useEffect(() => {
         window.addEventListener('keydown', downHandler);
+        window.addEventListener('keyup', upHandler)
         return () => {
           window.removeEventListener('keydown', downHandler);
+          window.removeEventListener('keyup', upHandler);
         };
-    }, []); // Empty array ensures that effect is only run on mount and unmount
+    }, [enterKeyUp]); // Empty array ensures that effect is only run on mount and unmount
 
     return(
         <center>
