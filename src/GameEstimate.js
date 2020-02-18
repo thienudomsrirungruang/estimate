@@ -4,8 +4,8 @@ import gameData from './gameData.json';
 import './GameEstimate.css';
 
 function GameEstimate(props) {
-    // const [question, setQuestion] = useState(gameData.questions[Math.floor(Math.random() * gameData.questions.length)]);
     const [answerInput, setAnswerInput] = useState("");
+    const [exponentInput, setExponentInput] = useState("");
 
     const setGameState = props.setGameState
     const setAnswerProps = props.setAnswerProps
@@ -27,10 +27,11 @@ function GameEstimate(props) {
 
     useEffect(() => {
         var quantity = gameData.quantities[Math.floor(Math.random() * gameData.quantities.length)];
+        var unit = gameData.units[Math.floor(Math.random() * gameData.units.length)];
         setQuestion({
             "title": quantity.name,
-            "unit": quantity.unit,
-            "answer": quantity.answer,
+            "unit": unit.name,
+            "answer": quantity.answer / unit.equivalent,
             "tolerance": 10
         });
     }, []);
@@ -50,15 +51,28 @@ function GameEstimate(props) {
         if(e.key === "Enter"){
             var correct = validateAnswer();
             setAnswerProps({
-                "userAnswer": answerInput,
+                "userAnswer": (answerInput === "" ? 1 : answerInput) * Math.pow(10, (exponentInput === "" ? 0 : exponentInput)),
                 "correctAnswer": question.answer,
                 "tolerance": question.tolerance,
-                "correct": correct
+                "correct": correct,
+                "outOfTime": false
             })
             setGameState(2);
             // changeQuestion();
             // setAnswerInput("");
         }
+    }
+
+    function outOfTime(){
+        var correct = validateAnswer();
+            setAnswerProps({
+                "userAnswer": NaN,
+                "correctAnswer": question.answer,
+                "tolerance": question.tolerance,
+                "correct": correct,
+                "outOfTime": true
+            })
+            setGameState(2);
     }
 
     useEffect(() => {
@@ -68,6 +82,9 @@ function GameEstimate(props) {
     useEffect(() => {
         setTimeout(() => {
             var millis = 15000 - Date.now() + startTimestamp;
+            if(millis < 0){
+                outOfTime();
+            }
             setTopBarPercent(millis / 15000);
         }, 30);
     });
@@ -81,6 +98,13 @@ function GameEstimate(props) {
                     type="text"
                     value={answerInput}
                     onChange={(e) => setAnswerInput(e.target.value)}
+                    onKeyDown={handleInputKeyDown}
+                />
+                ×10^
+                <input
+                    type="text"
+                    value={exponentInput}
+                    onChange={(e) => setExponentInput(e.target.value)}
                     onKeyDown={handleInputKeyDown}
                 />
             </center>

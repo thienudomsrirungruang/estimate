@@ -34,16 +34,27 @@ function GameAnswer(props) {
         };
     }, [enterKeyUp]); // Empty array ensures that effect is only run on mount and unmount
 
+    // upThreshold/downThreshold: order of magnitude to use scientific
+    function formatNumber(number, precision, upThreshold, downThreshold) {
+        number = Number(number.toPrecision(precision));
+        if(number < Math.pow(10, downThreshold) || number >= Math.pow(10, upThreshold)){
+            var oom = Math.floor(Math.log(number) / Math.log(10));
+            var magnitude = number / Math.pow(10, oom);
+            return magnitude + "e" + oom;
+        }
+        return number;
+    }
+    
     return(
         <center>
             <p className="bigText">
-                {answerProps.correct ? "Correct!" : "Incorrect!"}
+                {answerProps.outOfTime ? "Out of Time!" : (answerProps.correct ? "Correct!" : "Incorrect!")}
             </p>
             <p className="bodyText">
-                {"Correct answer: " + answerProps.correctAnswer}
+                {"Correct answer: " + formatNumber(answerProps.correctAnswer, 5, 6, -3)}
             </p>
-            <p className="bodyText">
-                {"Your answer: " + answerProps.userAnswer}
+            <p className="bodyText" style={{"display": (answerProps.outOfTime ? "none" : "initial")}}>
+                {"Your answer: " + formatNumber(answerProps.userAnswer, 5, 6, -3)}
             </p>
             <p className="bodyText">
                 {"Tolerance: " + answerProps.tolerance}

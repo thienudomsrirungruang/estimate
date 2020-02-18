@@ -15,5 +15,17 @@
             "unit": "m",
             "answer": 5250000
         }
+    ],
+    "units": [
+        {
+            "name": "meters",
+            "si": "m",
+            "equivalent": 1.0
+        },
+        {
+            "name": "smoots",
+            "si": "m",
+            "equivalent": 1.702
+        }
     ]
 }
