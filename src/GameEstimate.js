@@ -7,14 +7,14 @@ function GameEstimate(props) {
     const [answerInput, setAnswerInput] = useState("");
     const [exponentInput, setExponentInput] = useState("");
 
-    const setGameState = props.setGameState
-    const setAnswerProps = props.setAnswerProps
-    const score = props.score
-    const setScore = props.setScore
+    const setGameState = props.setGameState;
+    const setAnswerProps = props.setAnswerProps;
+    const score = props.score;
+    const setScore = props.setScore;
 
     const inputBox = useRef(null);
 
-    const setTopBarPercent = props.setTopBarPercent
+    const setTopBarPercent = props.setTopBarPercent;
 
     const [startTimestamp, setStartTimestamp] = useState(Date.now());
 
