@@ -36,27 +36,31 @@ function GameEstimate(props) {
         });
     }, []);
 
-    function validateAnswer(){
-        var userAnswer = parseFloat(answerInput)
-        var lowerBound = question.answer / question.tolerance
-        var upperBound = question.answer * question.tolerance
-        var correct = lowerBound <= userAnswer && userAnswer <= upperBound
+    function validateAnswer(userAnswer){
+        // var userAnswer = parseFloat(answerInput) * 10 ** parseFloat(exponentInput);
+        var lowerBound = question.answer / question.tolerance;
+        var upperBound = question.answer * question.tolerance;
+        console.log(lowerBound);
+        console.log(upperBound);
+        console.log(userAnswer);
+        var correct = lowerBound <= userAnswer && userAnswer <= upperBound;
         if(correct){
-            setScore(score + 1)
+            setScore(score + 1);
         }
-        return correct
+        return correct;
     }
 
     function handleInputKeyDown(e){
         if(e.key === "Enter"){
-            var correct = validateAnswer();
+            var userAnswer = (answerInput === "" ? 1 : answerInput) * Math.pow(10, (exponentInput === "" ? 0 : exponentInput));
+            var correct = validateAnswer(userAnswer);
             setAnswerProps({
-                "userAnswer": (answerInput === "" ? 1 : answerInput) * Math.pow(10, (exponentInput === "" ? 0 : exponentInput)),
+                "userAnswer": userAnswer,
                 "correctAnswer": question.answer,
                 "tolerance": question.tolerance,
                 "correct": correct,
                 "outOfTime": false
-            })
+            });
             setGameState(2);
             // changeQuestion();
             // setAnswerInput("");
@@ -65,14 +69,14 @@ function GameEstimate(props) {
 
     function outOfTime(){
         var correct = validateAnswer();
-            setAnswerProps({
-                "userAnswer": NaN,
-                "correctAnswer": question.answer,
-                "tolerance": question.tolerance,
-                "correct": correct,
-                "outOfTime": true
-            })
-            setGameState(2);
+        setAnswerProps({
+            "userAnswer": NaN,
+            "correctAnswer": question.answer,
+            "tolerance": question.tolerance,
+            "correct": correct,
+            "outOfTime": true
+        });
+        setGameState(2);
     }
 
     useEffect(() => {
