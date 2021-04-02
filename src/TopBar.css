@@ -1,0 +1,10 @@
+#bar-wrapper{
+    height: 12px;
+    width: 100%;
+    display: block;
+}
+
+#bar{
+    background-color: #2775e3;
+    height: 12px;
+}
