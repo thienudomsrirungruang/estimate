@@ -3,29 +3,29 @@
         {
             "name": "the diameter of Earth",
             "unit": "m",
-            "answer": 12472000
+            "value": 12472000
         },
         {
             "name": "the diameter of a proton",
             "unit": "m",
-            "answer": 8.33e-16
+            "value": 8.33e-16
         },
         {
             "name": "width of China",
             "unit": "m",
-            "answer": 5250000
+            "value": 5250000
         }
     ],
     "units": [
         {
             "name": "meters",
-            "si": "m",
-            "equivalent": 1.0
+            "unit": "m",
+            "value": 1.0
         },
         {
             "name": "smoots",
-            "si": "m",
-            "equivalent": 1.702
+            "unit": "m",
+            "value": 1.702
         }
     ]
 }

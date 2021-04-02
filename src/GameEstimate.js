@@ -31,7 +31,7 @@ function GameEstimate(props) {
         setQuestion({
             "title": quantity.name,
             "unit": unit.name,
-            "answer": quantity.answer / unit.equivalent,
+            "answer": quantity.value / unit.value,
             "tolerance": 10
         });
     }, []);
