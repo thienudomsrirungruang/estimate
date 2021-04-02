@@ -14,18 +14,66 @@
             "name": "width of China",
             "unit": "m",
             "value": 5250000
+        },
+        {
+            "name": "peak speed of Usain Bolt",
+            "unit": "m s^-1",
+            "value": 12.42
+        },
+        {
+            "name": "peak power of an average horse",
+            "unit": "kg m^2 s^-3",
+            "value": 11200.0
         }
     ],
     "units": [
         {
-            "name": "meters",
+            "name": "kilogram",
+            "plural": "kilograms",
+            "unit": "kg",
+            "value": 1.0
+        },
+        {
+            "name": "meter",
+            "plural": "meters",
             "unit": "m",
             "value": 1.0
         },
         {
-            "name": "smoots",
+            "name": "smoot",
+            "plural": "smoots",
             "unit": "m",
             "value": 1.702
+        },
+        {
+            "name": "second",
+            "plural": "seconds",
+            "unit": "s",
+            "value": 1.0
+        },
+        {
+            "name": "ampere",
+            "plural": "amperes",
+            "unit": "A",
+            "value": 1.0
+        },
+        {
+            "name": "kelvin",
+            "plural": "kelvin",
+            "unit": "K",
+            "value": 1.0
+        },
+        {
+            "name": "mole",
+            "plural": "moles",
+            "unit": "mol",
+            "value": 1.0
+        },
+        {
+            "name": "candela",
+            "plural": "candela",
+            "unit": "cd",
+            "value": 1.0
         }
     ]
 }
