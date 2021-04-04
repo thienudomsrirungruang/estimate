@@ -33,6 +33,7 @@ function GameEstimate(props) {
             return [new Map(), 1.0];
         }
         // gameData.units.forEach(x => {
+        var possibleUnits = [];
         for(var i = 0; i < gameData.units.length; i++){
             var x = gameData.units[i];
             var xunit = parseUnit(x.unit);
@@ -40,10 +41,10 @@ function GameEstimate(props) {
             console.log(xunit, unit);
             if(arrayContains(xunit, unit)){
                 console.log("contains pass");
-                for(var i = 0; i < 7; i++){
-                    if(unit[i] % xunit[i] == 0){
-                        console.log("i=" + i);
-                        var power = unit[i] / xunit[i];
+                for(var j = 0; j < 7; j++){
+                    if(unit[j] !== 0 && unit[j] % xunit[j] === 0){
+                        console.log("j=" + j);
+                        var power = unit[j] / xunit[j];
                         var subtractedUnit = arrayMinus(unit, arrayScalarMult(xunit, power));
                         console.log(subtractedUnit);
                         const [u, factor] = getUnitCombination(subtractedUnit);
@@ -51,13 +52,19 @@ function GameEstimate(props) {
                         console.log(u, factor);
                         var rf = u;
                         rf.set(x, power);
-                        console.log("unit, rf");
-                        console.log(unit, rf);
-                        return [rf, factor * Math.pow(x.value, power)];
+                        // console.log("unit, rf");
+                        // console.log(unit, rf);
+                        console.log(unit + " -> " + subtractedUnit);
+                        possibleUnits.push([rf, factor * Math.pow(x.value, power)]);
+                        // return [rf, factor * Math.pow(x.value, power)];
                     }
                 }
             }
         };
+        // return [new Map(), 1.0];
+        if(possibleUnits.length > 0){
+            return possibleUnits[rand(possibleUnits.length)];
+        }
         return [undefined, undefined];
     }
 
