@@ -24,6 +24,11 @@
             "name": "peak power of an average horse",
             "unit": "kg m^2 s^-3",
             "value": 11200.0
+        },
+        {
+            "name": "room temperature",
+            "unit": "K",
+            "value": 293
         }
     ],
     "units": [
@@ -34,10 +39,82 @@
             "value": 1.0
         },
         {
+            "name": "gram",
+            "plural": "grams",
+            "unit": "g",
+            "value": 1e-3
+        },
+        {
+            "name": "milligram",
+            "plural": "milligrams",
+            "unit": "g",
+            "value": 1e-6
+        },
+        {
+            "name": "microgram",
+            "plural": "micrograms",
+            "unit": "g",
+            "value": 1e-9
+        },
+        {
+            "name": "metric ton",
+            "plural": "metric tons",
+            "unit": "kg",
+            "value": 1.0e3
+        },
+        {
+            "name": "stone",
+            "plural": "stones",
+            "unit": "kg",
+            "value": 6.35
+        },
+        {
+            "name": "pound",
+            "plural": "pounds",
+            "unit": "kg",
+            "value": 0.4536
+        },
+        {
+            "name": "ounce",
+            "plural": "ounces",
+            "unit": "kg",
+            "value": 0.02835
+        },
+        {
             "name": "meter",
             "plural": "meters",
             "unit": "m",
             "value": 1.0
+        },
+        {
+            "name": "centimeter",
+            "plural": "centimeters",
+            "unit": "m",
+            "value": 1.0e-2
+        },
+        {
+            "name": "millimeter",
+            "plural": "millimeters",
+            "unit": "m",
+            "value": 1.0e-3
+        },
+        {
+            "name": "micrometer",
+            "plural": "micrometers",
+            "unit": "m",
+            "value": 1.0e-6
+        },
+        {
+            "name": "nanometer",
+            "plural": "nanometers",
+            "unit": "m",
+            "value": 1.0e-9
+        },
+        {
+            "name": "kilometer",
+            "plural": "kilometers",
+            "unit": "m",
+            "value": 1.0e3
         },
         {
             "name": "smoot",
@@ -46,10 +123,88 @@
             "value": 1.702
         },
         {
+            "name": "light-year",
+            "plural": "light-years",
+            "unit": "m",
+            "value": 9.4607e15
+        },
+        {
+            "name": "parsec",
+            "plural": "parsecs",
+            "unit": "m",
+            "value": 3.0857e16
+        },
+        {
+            "name": "astronomical unit",
+            "plural": "astronomical units",
+            "unit": "m",
+            "value": 1.495978707e11
+        },
+        {
             "name": "second",
             "plural": "seconds",
             "unit": "s",
             "value": 1.0
+        },
+        {
+            "name": "millisecond",
+            "plural": "milliseconds",
+            "unit": "s",
+            "value": 1.0e-3
+        },
+        {
+            "name": "microsecond",
+            "plural": "microseconds",
+            "unit": "s",
+            "value": 1.0e-6
+        },
+        {
+            "name": "nanosecond",
+            "plural": "nanoseconds",
+            "unit": "s",
+            "value": 1.0e-9
+        },
+        {
+            "name": "minute",
+            "plural": "minutes",
+            "unit": "s",
+            "value": 60.0
+        },
+        {
+            "name": "hour",
+            "plural": "hours",
+            "unit": "s",
+            "value": 3600.0
+        },
+        {
+            "name": "day",
+            "plural": "days",
+            "unit": "s",
+            "value": 86400.0
+        },
+        {
+            "name": "year",
+            "plural": "years",
+            "unit": "s",
+            "value": 3.154e7
+        },
+        {
+            "name": "decade",
+            "plural": "decades",
+            "unit": "s",
+            "value": 3.154e8
+        },
+        {
+            "name": "century",
+            "plural": "centuries",
+            "unit": "s",
+            "value": 3.154e9
+        },
+        {
+            "name": "millenium",
+            "plural": "millenia",
+            "unit": "s",
+            "value": 3.154e10
         },
         {
             "name": "ampere",
