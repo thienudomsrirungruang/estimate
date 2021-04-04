@@ -39,7 +39,7 @@ function GameAnswer(props) {
         number = Number(number.toPrecision(precision));
         if(number < Math.pow(10, downThreshold) || number >= Math.pow(10, upThreshold)){
             var oom = Math.floor(Math.log(number) / Math.log(10));
-            var magnitude = number / Math.pow(10, oom);
+            var magnitude = (number / Math.pow(10, oom)).toPrecision(precision);
             return magnitude + "e" + oom;
         }
         return number;
